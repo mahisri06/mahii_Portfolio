@@ -114,7 +114,7 @@ export function Experience() {
                     onClick={() => scrollToCompany(exp.id)}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
-                      "group relative w-full text-left overflow-hidden rounded-2xl border p-5 sm:p-6 transition-all duration-400 cursor-pointer block",
+                      "group relative w-full text-left overflow-hidden rounded-2xl border p-4 sm:p-6 transition-all duration-400 cursor-pointer block",
                       isActive
                         ? "border-accent/60 bg-card shadow-[0_16px_40px_-12px_rgba(255,107,53,0.4)] ring-1 ring-accent/30"
                         : "border-line bg-card/50 opacity-70 hover:opacity-100 hover:border-white/20 hover:bg-card/75"

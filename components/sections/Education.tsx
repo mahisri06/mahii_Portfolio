@@ -45,11 +45,11 @@ export function Education() {
 
             <RevealGroup as="ul" className="divide-y divide-line rounded-2xl border border-line" gap={0.06}>
               {education.school.map((s) => (
-                <RevealItem as="li" key={s.grade} className="flex items-center justify-between gap-4 px-6 py-4 text-sm">
+                <RevealItem as="li" key={s.grade} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 px-4 py-3 sm:px-6 sm:py-4 text-sm">
                   <span className="text-fg-2">
                     <span className="font-semibold text-fg">{s.grade}</span> · {s.school}
                   </span>
-                  <span className="font-mono text-muted">{s.year}</span>
+                  <span className="font-mono text-xs sm:text-sm text-muted shrink-0">{s.year}</span>
                 </RevealItem>
               ))}
             </RevealGroup>

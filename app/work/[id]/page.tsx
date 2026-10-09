@@ -101,7 +101,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </Link>
 
           {/* Quick Switcher Between Case Studies */}
-          <nav aria-label="Case study switcher" className="flex items-center gap-1.5 sm:gap-2">
+          <nav aria-label="Case study switcher" className="flex items-center gap-1 sm:gap-2">
             {projects.map((p) => {
               const isActive = p.id === project.id
               return (
@@ -109,13 +109,14 @@ export default async function CaseStudyPage({ params }: Props) {
                   key={p.id}
                   href={`/work/${p.id}`}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs transition-all",
+                    "flex items-center gap-1 rounded-full px-2.5 sm:px-3 py-1 font-mono text-[11px] sm:text-xs transition-all",
                     isActive
                       ? "border border-accent/60 bg-accent/15 font-semibold text-accent shadow-[0_0_15px_rgba(255,107,53,0.25)]"
                       : "border border-line/70 bg-card/40 text-muted hover:border-white/20 hover:text-fg"
                   )}
                 >
-                  <span className="font-semibold">{p.name.split(" ")[0]}</span>
+                  <span className="min-[480px]:hidden font-mono font-bold">{p.index}</span>
+                  <span className="hidden min-[480px]:inline font-semibold">{p.name.split(" ")[0]}</span>
                 </Link>
               )
             })}

@@ -88,7 +88,7 @@ export function Automation() {
         </div>
 
         <div className="mt-20 grid items-end gap-8 border-t border-line pt-12 lg:mt-28 lg:grid-cols-12">
-          <p className="text-[clamp(6.5rem,24vw,17rem)] leading-[0.8] font-extrabold tracking-[-0.07em] lg:col-span-7">
+          <p className="text-[clamp(4.2rem,16vw,17rem)] leading-[0.8] font-extrabold tracking-[-0.07em] lg:col-span-7">
             <span className="text-accent-gradient">
               <NumberTicker value={automation.reduction} />
             </span>

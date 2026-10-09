@@ -36,21 +36,21 @@ export function Stats() {
                 <div
                   key={s.label}
                   className={cn(
-                    "flex items-center justify-center gap-3.5 px-4 py-5 sm:px-6",
+                    "flex items-center justify-start sm:justify-center gap-2.5 sm:gap-3.5 px-3 py-4 sm:px-6 sm:py-5",
                     i % 2 === 1 && "border-l border-white/[0.08]",
                     i >= 2 && "border-t border-white/[0.08] lg:border-t-0",
                     i === 2 && "lg:border-l"
                   )}
                 >
-                  <span className="grid size-9 flex-none place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-accent">
-                    <Icon className="size-4" strokeWidth={2.2} aria-hidden />
+                  <span className="grid size-8 sm:size-9 flex-none place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-accent">
+                    <Icon className="size-3.5 sm:size-4" strokeWidth={2.2} aria-hidden />
                   </span>
-                  <div className="flex flex-col">
-                    <div className="flex items-baseline font-mono text-lg font-bold leading-tight tracking-tight text-fg sm:text-xl">
+                  <div className="flex flex-col min-w-0">
+                    <div className="flex items-baseline font-mono text-base sm:text-xl font-bold leading-tight tracking-tight text-fg">
                       <NumberTicker value={s.value} delay={0.15 + i * 0.08} />
                       <span className="ml-0.5 text-xs font-semibold text-accent">{s.suffix}</span>
                     </div>
-                    <span className="font-mono text-[10px] font-medium tracking-[0.12em] text-muted uppercase whitespace-nowrap">
+                    <span className="font-mono text-[9px] sm:text-[10px] font-medium tracking-[0.08em] sm:tracking-[0.12em] text-muted uppercase leading-tight mt-0.5">
                       {s.label}
                     </span>
                   </div>

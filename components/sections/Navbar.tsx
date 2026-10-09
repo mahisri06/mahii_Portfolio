@@ -174,7 +174,7 @@ export function Navbar() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.6, ease: EASE_OUT }}
-            className="fixed inset-0 z-40 flex flex-col bg-ink/[0.97] px-6 pt-28 pb-10 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-ink/[0.97] px-6 pt-24 pb-8 backdrop-blur-xl md:hidden overflow-y-auto overscroll-contain"
           >
             <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden />
             <motion.ul

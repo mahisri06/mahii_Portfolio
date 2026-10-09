@@ -509,7 +509,7 @@ export function Skills() {
               type="button"
               onClick={() => handleTabChange(g.id)}
               className={cn(
-                "group relative flex items-center gap-2.5 rounded-xl px-4.5 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:px-5 sm:py-3 sm:text-[12.5px]",
+                "group relative flex items-center gap-2 rounded-xl px-3.5 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 sm:gap-2.5 sm:px-5 sm:py-3 sm:text-[12.5px] sm:tracking-[0.14em]",
                 activeTab === g.id
                   ? "bg-accent text-ink shadow-[0_8px_24px_-6px_rgba(255,107,53,0.65)]"
                   : "border border-line bg-card/60 text-fg-2 hover:border-accent/40 hover:bg-card hover:text-fg"
@@ -609,25 +609,25 @@ export function Skills() {
 
           {/* Right Pane: Dark Code Inspector with Slow Dynamic Typing Animation */}
           <div className="order-2 lg:col-span-7 lg:sticky lg:top-28">
-            <div className="relative flex h-full min-h-[460px] max-h-[580px] flex-col overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0a0d14] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl">
+            <div className="relative flex h-full min-h-[360px] sm:min-h-[460px] max-h-[580px] flex-col overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0a0d14] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl">
               {/* Terminal Window Header Bar */}
               <div className="flex-none flex items-center justify-between border-b border-white/[0.08] bg-[#13171f] px-4 py-3 sm:px-5">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                   {/* macOS Style Traffic Dots */}
-                  <div className="flex items-center gap-1.5" aria-hidden>
+                  <div className="flex items-center gap-1.5 shrink-0" aria-hidden>
                     <span className="size-2.5 rounded-full bg-[#ff5f56]/90" />
                     <span className="size-2.5 rounded-full bg-[#ffbd2e]/90" />
                     <span className="size-2.5 rounded-full bg-[#27c93f]/90" />
                   </div>
-                  <span className="h-3 w-px bg-white/15 mx-1" />
+                  <span className="h-3 w-px bg-white/15 mx-0.5 sm:mx-1 shrink-0" />
                   {/* Active File Tab */}
-                  <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.06] px-2.5 py-1 font-mono text-[11px] text-slate-200">
-                    <Terminal className="size-3 text-accent" />
-                    <span>{activeSnippet.filename}</span>
+                  <div className="flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.06] px-2.5 py-1 font-mono text-[11px] text-slate-200 min-w-0">
+                    <Terminal className="size-3 text-accent shrink-0" />
+                    <span className="truncate max-w-[140px] sm:max-w-none">{activeSnippet.filename}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 shrink-0">
                   <span className="hidden font-mono text-[10px] tracking-wider text-slate-400 uppercase sm:inline-block">
                     {activeSnippet.language}
                   </span>
@@ -645,7 +645,7 @@ export function Skills() {
 
               {/* Code Highlight Banner */}
               <div className="flex-none border-b border-white/[0.06] bg-[#0e131b] px-4 py-2 sm:px-5">
-                <p className="font-mono text-[11px] text-[#ff9a70]">
+                <p className="font-mono text-[11px] text-[#ff9a70] truncate">
                   <span className="text-slate-400 mr-1.5">// Scope:</span>
                   {activeSnippet.highlight}
                 </p>
@@ -673,15 +673,15 @@ export function Skills() {
               </div>
 
               {/* Terminal Bottom Status Bar (Live QA Execution State) - STICKY to bottom of the card */}
-              <div className="sticky bottom-0 z-10 flex-none border-t border-white/[0.08] bg-[#13171f] px-4 py-2.5 sm:px-5 font-mono text-[11px]">
-                <div className="flex items-center gap-2 text-emerald-400">
-                  <span className="relative flex size-2">
+              <div className="sticky bottom-0 z-10 flex-none border-t border-white/[0.08] bg-[#13171f] px-4 py-2.5 sm:px-5 font-mono text-[11px] flex items-center justify-between">
+                <div className="flex items-center gap-2 text-emerald-400 min-w-0">
+                  <span className="relative flex size-2 shrink-0">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
                   </span>
-                  <span className="font-semibold">{activeSnippet.status}</span>
+                  <span className="font-semibold truncate">{activeSnippet.status}</span>
                 </div>
-                <div className="hidden sm:flex items-center gap-1.5 text-slate-400">
+                <div className="hidden sm:flex items-center gap-1.5 text-slate-400 shrink-0">
                   <span>QA Suite</span>
                   <span>·</span>
                   <span className="text-slate-200">Mahi Srivastava</span>

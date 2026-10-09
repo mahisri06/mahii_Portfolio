@@ -155,9 +155,9 @@ export function QALab() {
                           <TriangleAlert className="size-3" strokeWidth={2.5} aria-hidden />
                         )}
                       </span>
-                      <span className="truncate text-fg">{row.name}</span>
+                      <span className="min-w-0 flex-1 truncate text-fg">{row.name}</span>
                       <span aria-hidden className="mx-1 hidden h-px flex-1 border-t border-dashed border-white/10 sm:block" />
-                      <span className="ml-auto text-muted sm:ml-0">{row.time}</span>
+                      <span className="ml-auto text-muted sm:ml-0 shrink-0 text-xs">{row.time}</span>
                       <span
                         className={cn(
                           "w-14 text-right text-[11px] font-semibold tracking-wider",

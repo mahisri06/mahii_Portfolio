@@ -83,9 +83,9 @@ function CaseStudy({ project, flip, onOpen }: { project: Project; flip: boolean;
 
         <dl className="mt-8 grid grid-cols-3 border-y border-line">
           {project.metrics.map((m, i) => (
-            <div key={m.label} className={cn("py-4", i > 0 && "border-l border-line pl-3 sm:pl-4")}>
-              <dd className="font-mono text-lg leading-tight font-semibold text-fg sm:text-[22px]">{m.value}</dd>
-              <dt className="label-mono mt-1.5 !text-[9.5px] text-muted">{m.label}</dt>
+            <div key={m.label} className={cn("py-4", i > 0 && "border-l border-line pl-2 sm:pl-4")}>
+              <dd className="font-mono text-base sm:text-[22px] leading-tight font-semibold text-fg">{m.value}</dd>
+              <dt className="label-mono mt-1.5 !text-[9px] sm:!text-[9.5px] text-muted">{m.label}</dt>
             </div>
           ))}
         </dl>

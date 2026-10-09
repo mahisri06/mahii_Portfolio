@@ -43,7 +43,7 @@ export function Cta({
   }
 
   return (
-    <Magnetic>
+    <Magnetic className={cn("inline-block", className?.includes("w-full") && "w-full sm:w-auto")}>
       <a
         href={href}
         onClick={onClick}
@@ -52,7 +52,7 @@ export function Cta({
         rel={external ? "noopener noreferrer" : undefined}
         data-cursor={cursorLabel}
         className={cn(
-          "group/cta relative inline-flex items-center gap-2.5 overflow-hidden rounded-full font-mono font-medium tracking-[0.14em] uppercase transition-[transform,background-color,border-color,box-shadow] duration-500 ease-(--ease-out-expo) hover:scale-[1.03] active:scale-[0.98]",
+          "group/cta relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full font-mono font-medium tracking-[0.14em] uppercase transition-[transform,background-color,border-color,box-shadow] duration-500 ease-(--ease-out-expo) hover:scale-[1.03] active:scale-[0.98]",
           size === "lg" ? "h-14 px-7 text-xs" : "h-11 px-5 text-[11px]",
           variant === "primary"
             ? "bg-accent text-ink shadow-[0_10px_40px_-10px_rgba(255,107,53,0.7)] hover:shadow-[0_14px_50px_-8px_rgba(255,107,53,0.85)]"

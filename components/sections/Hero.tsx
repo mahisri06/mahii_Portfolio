@@ -25,10 +25,10 @@ const PARTICLES = [
 ]
 
 const CARD_LAYOUT: Record<string, { pos: string; float: string; depth: number; mobile: boolean }> = {
-  regression: { pos: "top-[7%] left-[-6%] sm:left-[-14%]", float: "6.5s", depth: 1.1, mobile: true },
+  regression: { pos: "top-[6%] -left-1 sm:left-[-14%]", float: "6.5s", depth: 1.1, mobile: true },
   api: { pos: "top-[30%] right-[-5%] sm:right-[-12%]", float: "7.8s", depth: 1.6, mobile: false },
   coverage: { pos: "bottom-[24%] left-[-6%] sm:left-[-18%]", float: "5.6s", depth: 1.4, mobile: false },
-  cases: { pos: "bottom-[-8%] right-[-4%] sm:right-[4%]", float: "8.6s", depth: 0.9, mobile: true },
+  cases: { pos: "bottom-[-4%] -right-1 sm:right-[4%]", float: "8.6s", depth: 0.9, mobile: true },
 }
 
 function FloatingCard({
@@ -55,24 +55,24 @@ function FloatingCard({
     >
       <div className="animate-float" style={{ "--float-duration": layout.float } as CSSProperties}>
         {/* Near-opaque backing: these sit over a bright photo, so frosted glass alone washes the text out. */}
-        <div className="flex items-center gap-3 rounded-2xl border border-white/15 bg-ink-2/90 py-2.5 pr-4 pl-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_40px_-12px_rgba(0,0,0,0.85)] backdrop-blur-xl">
+        <div className="flex items-center gap-2.5 sm:gap-3 rounded-2xl border border-white/15 bg-ink-2/90 py-2 sm:py-2.5 pr-3.5 sm:pr-4 pl-2 sm:pl-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_40px_-12px_rgba(0,0,0,0.85)] backdrop-blur-xl">
           <span
             className={cn(
-              "grid size-8 flex-none place-items-center rounded-xl border",
+              "grid size-7 sm:size-8 flex-none place-items-center rounded-xl border",
               card.tone === "success" ? "border-success/40 bg-success/15 text-success" : "border-accent/40 bg-accent/15 text-accent"
             )}
           >
             {card.tone === "success" ? (
-              <Check className="size-4" strokeWidth={2.5} aria-hidden />
+              <Check className="size-3.5 sm:size-4" strokeWidth={2.5} aria-hidden />
             ) : (
               <span className="size-1.5 rounded-full bg-current" />
             )}
           </span>
           <span className="flex flex-col">
-            <span className="font-mono text-[10px] font-medium tracking-[0.14em] whitespace-nowrap text-fg-2 uppercase">{card.kicker.replace("✓ ", "")}</span>
+            <span className="font-mono text-[9px] sm:text-[10px] font-medium tracking-[0.14em] whitespace-nowrap text-fg-2 uppercase">{card.kicker.replace("✓ ", "")}</span>
             <span
               className={cn(
-                "text-[15px] leading-tight font-extrabold tracking-tight",
+                "text-[14px] sm:text-[15px] leading-tight font-extrabold tracking-tight",
                 card.tone === "accent" ? "font-mono text-accent-light" : "text-fg"
               )}
             >
@@ -261,9 +261,11 @@ export function Hero({ image }: { image: ResolvedImage }) {
           <motion.p {...up(1.05)} className="mt-3 max-w-lg text-sm leading-relaxed text-fg-2">
             {hero.sub}
           </motion.p>
-          <motion.div {...up(1.15)} className="mt-8 flex flex-wrap items-center gap-4">
-            <Cta href="#work">View my work</Cta>
-            <Cta href={profile.resume} variant="ghost" icon="down" download>
+          <motion.div {...up(1.15)} className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <Cta href="#work" className="w-full sm:w-auto text-center justify-center">
+              View my work
+            </Cta>
+            <Cta href={profile.resume} variant="ghost" icon="down" download className="w-full sm:w-auto text-center justify-center">
               Download resume
             </Cta>
           </motion.div>
