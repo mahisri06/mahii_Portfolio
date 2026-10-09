@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mahi Srivastava — QA Engineer Portfolio
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Motion · Lenis · Magic UI components.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit content in one place
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All copy, metrics, projects and links live in [`data/portfolio.ts`](data/portfolio.ts).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | Where |
+| --- | --- |
+| Real photos | Drop `mahi-hero.jpg`, `mahi-about.jpg`, `mahi-personal.jpg` into `public/images/`. Local files are used automatically; until then the Unsplash placeholders in `images` are shown. |
+| Resume | Replace `public/resume/Mahi-Srivastava-Resume.pdf` (currently a placeholder). |
+| Email / phone | Set `profile.email` / `profile.phone`. While empty they are hidden and "Let's connect" opens LinkedIn. |
+| Domain | Set `NEXT_PUBLIC_SITE_URL` (used for canonical URL, OG tags, sitemap, robots). |
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/            layout (fonts, SEO), page, robots, sitemap, OG image, icon
+components/
+  sections/     Navbar, Hero, Stats, About, Skills, QALab, Experience, Projects,
+                ProjectModal, Automation, Process, Learning, Education, Beyond,
+                Contact, Footer, Background
+  visuals/      Abstract project mockups (clearly labelled, not client UIs)
+  ui/           Magic UI (number-ticker, border-beam, marquee, magic-card) + primitives
+  providers/    Lenis smooth scroll + MotionConfig, desktop custom cursor
+lib/            animation variants, constants, server-side image resolver
+data/           portfolio.ts — single source of truth
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add more Magic UI components with `npx shadcn@latest add @magicui/<name>`.
